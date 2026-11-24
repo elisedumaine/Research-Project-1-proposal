@@ -9,6 +9,7 @@ os.makedirs(KIT + "/captures", exist_ok=True)
 path = KIT + "/captures/snapshot.png"
 
 viewer = toolutils.sceneViewer()
+viewer.setPwd(hou.node("/obj"))
 viewport = viewer.curViewport()
 viewport.changeType(hou.geometryViewportType.Perspective)
 hou.clearAllSelected()

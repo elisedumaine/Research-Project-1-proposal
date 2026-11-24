@@ -1,0 +1,2 @@
+device: cuda:0
+saved photos/test_fox.obj: 121922 faces in 74.3s

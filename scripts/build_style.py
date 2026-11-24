@@ -88,9 +88,13 @@ if (part == "bark") {
     if (tone == 2) tone = rand(seed * 3.17 + 0.5) < 0.5 ? 0 : 1;
     part = tone == 0 ? "bark_light" : "bark_dark";
 }
-int idx = find(parts, part);
-if (idx < 0) idx = find(parts, "rock");
-vector c = table[pal * nparts + idx];
+// "keep": the face keeps the color it already has (Low-Polify's original colors).
+vector c = @Cd;
+if (part != "keep") {
+    int idx = find(parts, part);
+    if (idx < 0) idx = find(parts, "rock");
+    c = table[pal * nparts + idx];
+}
 
 // Hand-painted variation: a little per piece, a little less per facet.
 float per_piece = rand(set(i@piece, seed, 3.1)) - 0.5;

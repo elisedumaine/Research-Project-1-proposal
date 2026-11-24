@@ -4,3 +4,8 @@ untitled.hip
 __pycache__/
 captures/snapshot.png
 hda/backup/
+photo3d/
+captures/from_user/
+captures/screen*.png
+captures/rt_*.png
+captures/preview_test.png
